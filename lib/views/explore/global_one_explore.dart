@@ -5,42 +5,44 @@ import 'credit.dart';
 class GlobalOneExplore extends StatelessWidget {
   GlobalOneExplore({Key? key}) : super(key: key);
 
+  List<Color> titleColor = const [
+    Color(0xFF459ada),
+    Color(0xFF1c476a),
+    Color(0xFF61727d),
+    Color(0xFFb8463e),
+  ];
+
+  List<Widget> leadingImages = const [
+    Image(image: AssetImage('lib/images/savings.png')),
+    Image(image: AssetImage('lib/images/save.png')),
+    Image(image: AssetImage('lib/images/insure.png')),
+    Image(image: AssetImage('lib/images/credit.png')),
+  ];
+
+  List<String> title = const [
+    "Savings Account",
+    "Save",
+    "Insure",
+    "Credit",
+  ];
+  List<String> subtitle = const [
+    "Transactional savings account",
+    "Flexible, Fixed-Term & Tax-Free Savings",
+    "Funeral Plan",
+    "Credit Card, Facility & Loan",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 245, 245, 245),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            CustomCard(
-              titleTitle: "Savings Account",
-              subSubtitle: "Transactional savings account",
-              textColor: Colors.blueAccent,
-              onTap: () {},
-            ),
-            CustomCard(
-              titleTitle: "Save",
-              subSubtitle: "Flexible, Fixed-Term & Tax-Free Savings",
-              textColor: const Color.fromARGB(255, 1, 60, 90),
-              onTap: () {},
-            ),
-            CustomCard(
-                titleTitle: "Insure",
-                subSubtitle: "Funeral Plan",
-                onTap: () {}),
-            CustomCard(
-                titleTitle: "Credit",
-                subSubtitle: "Credit card, Facility & Loan",
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Credit())));
-                }),
-          ],
-        ),
-      ),
-    );
+        color: const Color.fromARGB(255, 245, 245, 245),
+        child: ListView.builder(
+            itemCount: title.length,
+            itemBuilder: ((context, index) => CustomCard(
+                titleTitle: title[index],
+                leadingIcon: leadingImages[index],
+                subSubtitle: subtitle[index],
+                textColor: titleColor[index],
+                onTap: () {}))));
   }
 }

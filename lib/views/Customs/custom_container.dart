@@ -28,8 +28,8 @@ class CustomContainer extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: itemCount,
           separatorBuilder: ((BuildContext context, index) => const Divider(
-                indent: 18,
-                endIndent: 18,
+                indent: 16,
+                endIndent: 16,
                 height: 1,
                 thickness: 1,
               )),

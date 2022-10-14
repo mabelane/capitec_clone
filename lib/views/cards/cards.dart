@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../explore/global_one_explore.dart';
-import '../explore/live_better_explore.dart';
+import 'body_cards.dart';
+import 'virtual_card.dart';
 
 class Cards extends StatelessWidget {
   const Cards({super.key});
@@ -41,8 +41,7 @@ class Cards extends StatelessWidget {
                   ]),
             ),
             Expanded(
-                child: TabBarView(
-                    children: [GlobalOneExplore(), LiveBetterExplore()]))
+                child: TabBarView(children: [CardsBody(), const VirtualCard()]))
           ]),
         ),
       ),

@@ -3,60 +3,79 @@ import 'package:flutter/material.dart';
 import '../Customs/custom_card.dart';
 
 class LiveBetterExplore extends StatelessWidget {
-  const LiveBetterExplore({Key? key}) : super(key: key);
+  LiveBetterExplore({Key? key}) : super(key: key);
+
+  List<String> title = ["Live Better"];
+  List<String> subtitle = ["Real rewars, real cashback"];
+  List<Widget> leadingImage = const [
+    Image(image: AssetImage('lib/images/savings.png')),
+  ];
+  List<Color> titleColor = const [
+    Color(0xFF2c3be9),
+  ];
+
+  List<String> widgetTitle = [
+    "Live Better Academy",
+    "EasyEquites",
+    "GetSmarter",
+  ];
+  List<String> widgetSubtitle = [
+    "Be Moneey Smart with free courses",
+    "Investing made easy",
+    "Study further for less",
+  ];
+  List<Widget> widgetLeadingImage = const [
+    Image(image: AssetImage('lib/images/savings.png')),
+    Image(image: AssetImage('lib/images/save.png')),
+    Image(image: AssetImage('lib/images/insure.png')),
+  ];
+  List<Color> widgetTitleColor = const [
+    Color(0xFF2c3be9),
+    Color(0xFFd9364c),
+    Color(0xFF0f2033),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: const Color.fromARGB(255, 245, 245, 245),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
+      child: ListView(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            child: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: title.length,
+                itemBuilder: ((context, index) => CustomCard(
+                    titleTitle: title[index],
+                    leadingIcon: leadingImage[index],
+                    subSubtitle: subtitle[index],
+                    textColor: titleColor[index],
+                    onTap: () {}))),
+          ),
+          Container(
+            margin: const EdgeInsets.fromLTRB(10, 15, 0, 7),
+            child: const Text(
+              "Widgets",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            CustomCard(
-              titleTitle: "Live Better",
-              subSubtitle: "Get rewards for free",
-              onTap: () {},
-            ),
-
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 2, horizontal: 10),
-              child: Row(
-                children: const [
-                  Text(
-                    "Widgets",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  )
-                ],
-              ),
-            ),
-            //******* Live Better Academy card */
-
-            CustomCard(
-              titleTitle: "Live Better Academy",
-              subSubtitle: "Be Money Smart with free courses",
-              onTap: () {},
-            ),
-
-            //******* Easy Enquities Card */
-            CustomCard(
-              titleTitle: "EasyEnquities",
-              subSubtitle: "Investing made easy",
-              textColor: const Color.fromARGB(255, 233, 4, 4),
-              onTap: () {},
-            ),
-
-            //*********** Get Smarter card */
-            CustomCard(
-              titleTitle: "GetSmarter",
-              subSubtitle: "Study futher for less",
-              textColor: const Color.fromARGB(198, 18, 18, 18),
-              onTap: () {},
-            ),
-          ],
-        ),
+          ),
+          Container(
+            child: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widgetTitle.length,
+                itemBuilder: ((context, index) => CustomCard(
+                    titleTitle: widgetTitle[index],
+                    leadingIcon: widgetLeadingImage[index],
+                    subSubtitle: widgetSubtitle[index],
+                    textColor: widgetTitleColor[index],
+                    onTap: () {}))),
+          ),
+        ],
       ),
     );
   }
