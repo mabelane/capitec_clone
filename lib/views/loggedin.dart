@@ -29,13 +29,15 @@ class _CallPagesState extends State<CallPages> {
           }),
           items: const [
             BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: "Cards", icon: Icon(Icons.home)),
             BottomNavigationBarItem(
-                label: "Transact",
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.blueAccent,
-                )),
+                label: "Cards",
+                icon: Image(
+                    height: 40, image: AssetImage('lib/images/cardIcon.png'))),
+            BottomNavigationBarItem(
+              label: "Transact",
+              icon: Image(
+                  height: 50, image: AssetImage('lib/images/transactIcon.png')),
+            ),
             BottomNavigationBarItem(label: "Messages", icon: Icon(Icons.home)),
             BottomNavigationBarItem(label: "Explore", icon: Icon(Icons.home)),
           ]),

@@ -8,7 +8,7 @@ class LiveBetterExplore extends StatelessWidget {
   List<String> title = ["Live Better"];
   List<String> subtitle = ["Real rewars, real cashback"];
   List<Widget> leadingImage = const [
-    Image(image: AssetImage('lib/images/savings.png')),
+    Image(image: AssetImage('lib/images/livebetter.png')),
   ];
   List<Color> titleColor = const [
     Color(0xFF2c3be9),
@@ -25,9 +25,9 @@ class LiveBetterExplore extends StatelessWidget {
     "Study further for less",
   ];
   List<Widget> widgetLeadingImage = const [
-    Image(image: AssetImage('lib/images/savings.png')),
-    Image(image: AssetImage('lib/images/save.png')),
-    Image(image: AssetImage('lib/images/insure.png')),
+    Image(image: AssetImage('lib/images/academy.png')),
+    Image(image: AssetImage('lib/images/easyequities.png')),
+    Image(image: AssetImage('lib/images/getsmarter.png')),
   ];
   List<Color> widgetTitleColor = const [
     Color(0xFF2c3be9),
@@ -57,10 +57,10 @@ class LiveBetterExplore extends StatelessWidget {
                     onTap: () {}))),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(10, 15, 0, 7),
+            margin: const EdgeInsets.fromLTRB(18, 15, 0, 5),
             child: const Text(
               "Widgets",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
           Container(

@@ -13,6 +13,13 @@ class _GlobalOneState extends State<GlobalOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: 98,
+        leading: TextButton(
+            onPressed: () {},
+            child: Text(
+              "Sign Out",
+              style: TextStyle(color: Colors.white),
+            )),
         title: const Text("GlobalOne"),
         flexibleSpace: GradientTabBar(),
       ),
