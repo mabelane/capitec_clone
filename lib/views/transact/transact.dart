@@ -25,10 +25,25 @@ class Transact extends StatelessWidget {
     "Send cash",
   ];
 
-  List<Widget> trasferIcons = const [
-    Icon(Icons.no_transfer_outlined),
-    Icon(Icons.calendar_month),
-    Icon(Icons.send_to_mobile_outlined),
+  List<Widget> trasferIcons = [
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/transfer.png',
+          color: const Color(0xFF459ada),
+        )),
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/buy prepaid.png',
+          color: const Color(0xFF459ada),
+        )),
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/send cash.png',
+          color: const Color(0xFF459ada),
+        )),
   ];
 
   List<String> prepaid = [
@@ -37,14 +52,45 @@ class Transact extends StatelessWidget {
     "Play Lotto",
   ];
 
+  List<Widget> prepaidIcons = [
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/buy prepaid.png',
+          color: const Color(0xFF459ada),
+        )),
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/buy Electricity.png',
+          color: const Color(0xFF459ada),
+        )),
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/lotto.png',
+          color: const Color(0xFF459ada),
+        )),
+  ];
+
   List<String> owing = [
     "Debit orders",
     "SARS eFilling",
   ];
 
-  List<Widget> owingIcons = const [
-    Icon(Icons.calendar_month),
-    Icon(Icons.receipt_long_outlined)
+  List<Widget> owingIcons = [
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/debit orders.png',
+          color: const Color(0xFF459ada),
+        )),
+    SizedBox(
+        height: 24,
+        child: Image.asset(
+          'lib/icons/SARS.png',
+          color: const Color(0xFF459ada),
+        )),
   ];
 
   @override
@@ -82,7 +128,7 @@ class Transact extends StatelessWidget {
                           title: Text(beneficiary[index]),
                           trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
-                            color: Colors.blueAccent,
+                            color: Color(0xFF459ada),
                           ),
                         ))),
               ),
@@ -112,9 +158,10 @@ class Transact extends StatelessWidget {
                         )),
                     itemBuilder: ((context, index) => ListTile(
                           title: Text(prepaid[index]),
+                          leading: prepaidIcons[index],
                           trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
-                            color: Colors.blueAccent,
+                            color: Color(0xFF459ada),
                           ),
                           onTap: () {},
                         ))),

@@ -21,25 +21,39 @@ class _CallPagesState extends State<CallPages> {
     return Scaffold(
       body: body[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Color(0xFF459ada),
           currentIndex: _selectedIndex,
           onTap: ((int index) {
             setState(() {
               _selectedIndex = index;
             });
           }),
-          items: const [
-            BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+          items: [
             BottomNavigationBarItem(
-                label: "Cards",
-                icon: Image(
-                    height: 40, image: AssetImage('lib/images/cardIcon.png'))),
+                label: "Home", icon: Icon(Icons.home_outlined)),
+            BottomNavigationBarItem(
+              label: "Cards",
+              icon: SizedBox(
+                height: 25,
+                child: Image.asset(
+                  'lib/icons/cardIcon.png',
+                  color: Colors.grey,
+                ),
+              ),
+            ),
             BottomNavigationBarItem(
               label: "Transact",
-              icon: Image(
-                  height: 50, image: AssetImage('lib/images/transactIcon.png')),
+              icon: SizedBox(
+                  height: 30, child: Image.asset('lib/icons/statistics.png')),
             ),
-            BottomNavigationBarItem(label: "Messages", icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: "Explore", icon: Icon(Icons.home)),
+            BottomNavigationBarItem(
+                label: "Messages",
+                icon: SizedBox(
+                    height: 25, child: Image.asset('lib/icons/SMS.png'))),
+            BottomNavigationBarItem(
+                label: "Explore",
+                icon: SizedBox(
+                    height: 25, child: Image.asset('lib/icons/explore.png'))),
           ]),
     );
   }

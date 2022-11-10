@@ -1,5 +1,6 @@
 import 'package:capitec_clone/views/Customs/tabbar_flex.dart';
 import 'package:flutter/material.dart';
+import 'capitec_connect.dart';
 import 'global_one_explore.dart';
 import 'live_better_explore.dart';
 
@@ -14,7 +15,7 @@ class _ExploreState extends State<Explore> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Explore"),
@@ -46,13 +47,19 @@ class _ExploreState extends State<Explore> {
                       text: "GlobalOne",
                     ),
                     Tab(
+                      text: "Capitec Connect",
+                    ),
+                    Tab(
                       text: "Live Better",
                     )
                   ]),
             ),
             Expanded(
-                child: TabBarView(
-                    children: [GlobalOneExplore(), LiveBetterExplore()]))
+                child: TabBarView(children: [
+              GlobalOneExplore(),
+              const CapitecConnect(),
+              LiveBetterExplore()
+            ]))
           ],
         ),
       ),

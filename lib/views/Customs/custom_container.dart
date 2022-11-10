@@ -39,7 +39,7 @@ class CustomContainer extends StatelessWidget {
                 title: Text(title[index]),
                 trailing: const Icon(
                   Icons.arrow_forward_ios_outlined,
-                  color: Colors.blueAccent,
+                  color: Color(0xFF459ada),
                 ),
                 onTap: onTap,
               ))),
