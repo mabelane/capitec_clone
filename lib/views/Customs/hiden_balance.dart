@@ -27,7 +27,7 @@ class HiddenBalance extends StatelessWidget {
                   accName,
                   style: const TextStyle(color: Colors.black),
                 ),
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.arrow_forward_ios_outlined,
                   color: Colors.blueAccent,
                 ),

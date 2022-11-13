@@ -1,9 +1,38 @@
+import 'package:capitec_clone/views/explore/globalone/insure/insure.dart';
+import 'package:capitec_clone/views/explore/globalone/save/save.dart';
 import 'package:flutter/material.dart';
+import '../../model/explore_accounts.dart';
 import '../Customs/custom_card.dart';
-import 'credit.dart';
+import 'globalone/credit/credit.dart';
+import 'globalone/explore_savings.dart';
 
 class GlobalOneExplore extends StatelessWidget {
   GlobalOneExplore({Key? key}) : super(key: key);
+
+  List<ExploreAccounts> explreAccounts = [
+    ExploreAccounts(
+        leadingImage: const Image(image: AssetImage('lib/images/savings.png')),
+        title: "Savings Account",
+        subTitle: "Transactional savings account",
+        page: ExploreSavings()),
+    ExploreAccounts(
+      leadingImage: const Image(image: AssetImage('lib/images/save.png')),
+      title: "Save",
+      subTitle: "Flexible, Fixed-Term & Tax-Free Savings",
+      page: Save(),
+    ),
+    ExploreAccounts(
+      leadingImage: const Image(image: AssetImage('lib/images/insure.png')),
+      title: "Insure",
+      subTitle: "Funeral Plan",
+      page: Insure(),
+    ),
+    ExploreAccounts(
+        leadingImage: const Image(image: AssetImage('lib/images/credit.png')),
+        title: "Credit",
+        subTitle: "Credit Card, Facility & Loan",
+        page: Credit())
+  ];
 
   List<Color> titleColor = const [
     Color(0xFF459ada),
@@ -12,37 +41,20 @@ class GlobalOneExplore extends StatelessWidget {
     Color(0xFFb8463e),
   ];
 
-  List<Widget> leadingImages = const [
-    Image(image: AssetImage('lib/images/savings.png')),
-    Image(image: AssetImage('lib/images/save.png')),
-    Image(image: AssetImage('lib/images/insure.png')),
-    Image(image: AssetImage('lib/images/credit.png')),
-  ];
-
-  List<String> title = const [
-    "Savings Account",
-    "Save",
-    "Insure",
-    "Credit",
-  ];
-  List<String> subtitle = const [
-    "Transactional savings account",
-    "Flexible, Fixed-Term & Tax-Free Savings",
-    "Funeral Plan",
-    "Credit Card, Facility & Loan",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
         color: const Color.fromARGB(255, 245, 245, 245),
         child: ListView.builder(
-            itemCount: title.length,
+            itemCount: explreAccounts.length,
             itemBuilder: ((context, index) => CustomCard(
-                titleTitle: title[index],
-                leadingIcon: leadingImages[index],
-                subSubtitle: subtitle[index],
+                titleTitle: explreAccounts[index].title,
+                leadingIcon: explreAccounts[index].leadingImage,
+                subSubtitle: explreAccounts[index].subTitle,
                 textColor: titleColor[index],
-                onTap: () {}))));
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: ((context) => explreAccounts[index].page)));
+                }))));
   }
 }

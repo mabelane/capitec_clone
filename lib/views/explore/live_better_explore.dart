@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-
+import '../../model/explore_accounts.dart';
 import '../Customs/custom_card.dart';
+import 'explore_livebetter/easy_equities/easyequites.dart';
+import 'explore_livebetter/get_smarter.dart';
+import 'explore_livebetter/livebetteracademy/live_better_academy.dart';
 
 class LiveBetterExplore extends StatelessWidget {
   LiveBetterExplore({Key? key}) : super(key: key);
@@ -29,6 +32,28 @@ class LiveBetterExplore extends StatelessWidget {
     Image(image: AssetImage('lib/images/easyequities.png')),
     Image(image: AssetImage('lib/images/getsmarter.png')),
   ];
+
+  List<ExploreAccounts> explreAccounts = [
+    ExploreAccounts(
+        leadingImage: const Image(image: AssetImage('lib/images/academy.png')),
+        title: "Live Better Academy",
+        subTitle: "Be Moneey Smart with free courses",
+        page: LiveBetterAcademy()),
+    ExploreAccounts(
+      leadingImage:
+          const Image(image: AssetImage('lib/images/easyequities.png')),
+      title: "EasyEquites",
+      subTitle: "Investing made easy",
+      page: EasyEquites(),
+    ),
+    ExploreAccounts(
+      leadingImage: const Image(image: AssetImage('lib/images/getsmarter.png')),
+      title: "GetSmarter",
+      subTitle: "Study further for less",
+      page: GetSmarter(),
+    ),
+  ];
+
   List<Color> widgetTitleColor = const [
     Color(0xFF2c3be9),
     Color(0xFFd9364c),
@@ -64,17 +89,21 @@ class LiveBetterExplore extends StatelessWidget {
             ),
           ),
           Container(
-            child: ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: widgetTitle.length,
-                itemBuilder: ((context, index) => CustomCard(
-                    titleTitle: widgetTitle[index],
-                    leadingIcon: widgetLeadingImage[index],
-                    subSubtitle: widgetSubtitle[index],
-                    textColor: widgetTitleColor[index],
-                    onTap: () {}))),
-          ),
+              color: const Color.fromARGB(255, 245, 245, 245),
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: explreAccounts.length,
+                  itemBuilder: ((context, index) => CustomCard(
+                      titleTitle: explreAccounts[index].title,
+                      leadingIcon: explreAccounts[index].leadingImage,
+                      subSubtitle: explreAccounts[index].subTitle,
+                      textColor: widgetTitleColor[index],
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) =>
+                                explreAccounts[index].page)));
+                      })))),
         ],
       ),
     );

@@ -5,8 +5,10 @@ class LiveBetterAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Live Better"),
+      ),
     );
   }
 }

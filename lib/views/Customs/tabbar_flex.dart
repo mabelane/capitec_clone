@@ -15,3 +15,12 @@ class GradientTabBar extends StatelessWidget {
     ));
   }
 }
+
+class LiveBetterHomeGradient extends StatelessWidget {
+  const LiveBetterHomeGradient({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

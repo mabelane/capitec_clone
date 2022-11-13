@@ -90,7 +90,10 @@ class _GlobalOneState extends State<GlobalOne> {
                         accName: _accName[index],
                         balText: availableBalance[index],
                         accBal: 'R ${balance[index]}',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: ((context) => _accounts[index])));
+                        },
                       );
                     }))
                 : ListView.builder(

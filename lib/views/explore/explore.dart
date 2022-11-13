@@ -57,7 +57,7 @@ class _ExploreState extends State<Explore> {
             Expanded(
                 child: TabBarView(children: [
               GlobalOneExplore(),
-              const CapitecConnect(),
+              CapitecConnect(),
               LiveBetterExplore()
             ]))
           ],

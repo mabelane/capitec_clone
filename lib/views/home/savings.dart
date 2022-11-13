@@ -1,3 +1,4 @@
+import 'package:capitec_clone/views/home/savings/default_account_view.dart';
 import 'package:flutter/material.dart';
 
 class SavingsAccount extends StatelessWidget {
@@ -5,8 +6,6 @@ class SavingsAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
-    );
+    return DefaultAccountView();
   }
 }
