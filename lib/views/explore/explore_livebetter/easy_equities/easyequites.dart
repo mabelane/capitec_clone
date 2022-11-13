@@ -105,6 +105,10 @@ class EasyEquites extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
+                    const Text(
+                      "* Note exchange prices are delayed in accordance with regional exchange rules. South African prices are delayed by 15 minutes; North American prices are delayed by 15 minutes; Australian prices are delayed by 20 minutes. EasyEquities is a subsidiary of Purple Group Limited, a company listed on the JSE Limited (PPE)",
+                      strutStyle: StrutStyle(height: 1.5),
+                    )
                   ],
                 ),
               )
